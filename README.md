@@ -2,6 +2,8 @@
 
 This is a dark-background, GUI-only colorscheme for Vim (designed on MacVim) with limited use of color. I find many colorschemes too bright and contrasty to be comfortable for long periods of use.
 
+![](http://cl.ly/21380G433r0R1e2k3l3F/cabin-colorscheme.png)
+
 ## License
 
 Copyright (c) 2012 Cabın
