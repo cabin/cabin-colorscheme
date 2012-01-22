@@ -1,7 +1,7 @@
 " Cabin colorscheme
 "
 " Maintainer:	Zak Johnson <zak@hellocabin.com>
-" Last Change:	2012-01-15
+" Last Change:	2012-01-22
 " URL: https://github.com/cabin/cabin-colorscheme
 
 set background=dark
@@ -15,19 +15,19 @@ let g:colors_name = "cabin"
 
 " General VIM chrome.
 
-hi Normal guifg=#8a8a8a guibg=#121212
-hi Cursor guibg=#5fff87
-hi MatchParen guifg=#5fff87 guibg=#000000
-hi StatusLineNC gui=NONE guifg=#303030 guibg=#000000
-hi VertSplit gui=NONE guifg=#000000 guibg=bg
+hi Normal NONE guifg=#8a8a8a ctermfg=245 guibg=#121212 ctermbg=233
+hi Cursor NONE guifg=#000000 ctermfg=0 guibg=#5fff87 ctermbg=84
+hi MatchParen NONE gui=bold cterm=bold guifg=#5fff87 ctermfg=84
+hi StatusLineNC NONE guifg=#303030 ctermfg=236 guibg=#000000 ctermbg=0
+hi VertSplit NONE guifg=#000000 ctermfg=0
 
 function! s:StatusLine(focus)
   if exists("g:colors_name") && g:colors_name == "cabin"
     if a:focus
-      hi StatusLine gui=NONE guifg=#d0d0d0 guibg=#000000
+      hi StatusLine NONE guifg=#d0d0d0 ctermfg=252 guibg=#000000 ctermbg=0
     else
       " Use reverse so Vim doesn't add markers to the active status line.
-      hi StatusLine gui=REVERSE guibg=#303030 guifg=#000000
+      hi StatusLine gui=reverse cterm=reverse guibg=#303030 ctermbg=236 guifg=#000000 ctermfg=0
     endif
   endif
 endfunction
@@ -40,30 +40,30 @@ augroup cabin_colorscheme
     au FocusGained * call s:StatusLine(1)
 augroup end
 
-hi CursorColumn guibg=#080808
-hi CursorLine guibg=#080808
-hi ColorColumn guibg=#080808
-hi LineNr guifg=#303030 guibg=#080808
-hi SignColumn guifg=#303030 guibg=#080808
-hi FoldColumn guifg=fg guibg=#080808
-hi Folded guibg=bg guifg=#af8787
+hi CursorColumn NONE guibg=#080808 ctermbg=232
+hi CursorLine NONE guibg=#080808 ctermbg=232
+hi ColorColumn NONE guibg=#080808 ctermbg=232
+hi LineNr NONE guifg=#303030 ctermfg=236 guibg=#080808 ctermbg=232
+hi SignColumn NONE guifg=#303030 ctermfg=236 guibg=#080808 ctermbg=232
+hi FoldColumn NONE guibg=#080808 ctermbg=232
+hi Folded NONE guifg=#af8787 ctermfg=138
 
-hi Pmenu guifg=bg guibg=fg
-hi PmenuSel gui=NONE guifg=#000000 guibg=#005faf
-hi WildMenu gui=bold guifg=bg guibg=fg
+hi Pmenu NONE guifg=#262626 ctermfg=235 guibg=#6c6c6c ctermbg=242
+hi PmenuSel NONE guifg=#000000 ctermfg=0 guibg=#005faf ctermbg=25
+hi WildMenu NONE gui=bold cterm=bold guifg=#000000 ctermfg=0 guibg=#005faf ctermbg=25
 
-hi Search guibg=#afaf87
-hi IncSearch guifg=#afaf87
-hi Visual guifg=bg guibg=fg
+hi Search NONE guifg=#000000 ctermfg=0 guibg=#afff5f ctermbg=155
+hi IncSearch NONE guifg=#000000 ctermfg=0 guibg=#afff5f ctermbg=155
+hi Visual NONE guifg=#121212 ctermfg=233 guibg=#8a8a8a ctermbg=245
 
-hi NonText guifg=#005f87
-hi SpecialKey guifg=#005f87
+hi NonText NONE guifg=#005f87 ctermfg=24
+hi SpecialKey NONE guifg=#005f87 ctermfg=24
 
 " TODO: refine
-hi DiffAdd guibg=#262626
-hi DiffDelete gui=NONE guibg=#000000 guifg=#444444
-hi DiffChange guibg=#1c1c1c
-hi DiffText NONE guibg=#303030
+hi DiffAdd NONE guibg=#262626 ctermbg=235
+hi DiffDelete NONE guibg=#000000 ctermbg=0 guifg=#444444 ctermfg=238
+hi DiffChange NONE guibg=#1c1c1c ctermbg=234
+hi DiffText NONE guibg=#303030 ctermbg=236
 
 " Unchanged groups (from :help highlight-groups).
 " Conceal	placeholder characters substituted for concealed text (see 'conceallevel')
@@ -78,18 +78,18 @@ hi DiffText NONE guibg=#303030
 
 " Syntax highlighting (from :help group-name).
 
-hi Comment gui=italic guifg=#585858 guibg=bg
+hi Comment NONE gui=italic guifg=#585858 ctermfg=240
 " TODO: Constant isn't in the 256-color palette.
-hi Constant gui=NONE guifg=#8b002e guibg=bg
-hi Identifier gui=NONE guifg=#875faf guibg=bg
-hi Statement gui=bold guifg=#8787af guibg=bg
-hi Type gui=NONE guifg=#5f5f87 guibg=bg
-hi Operator gui=NONE guifg=#6c6c6c guibg=bg
-hi PreProc guifg=#5f5faf
-"hi Special guifg=#5f5f87  " TODO: Consider this instead
-hi Special guifg=#5f8787
+hi Constant NONE guifg=#8b002e ctermfg=88
+hi Identifier NONE guifg=#875faf ctermfg=97
+hi Statement NONE gui=bold cterm=bold guifg=#8787af ctermfg=103
+hi Type NONE guifg=#5f5f87 ctermfg=60
+hi Operator NONE guifg=#6c6c6c ctermfg=242
+hi PreProc NONE guifg=#5f5faf ctermfg=61
+"hi Special NONE guifg=#5f5f87 ctermfg=60  " TODO: Consider this instead
+hi Special NONE guifg=#5f8787 ctermfg=66
 
 hi Underlined NONE  " TODO
 hi Ignore NONE      " TODO
-hi Error gui=NONE guifg=#b2b2b2 guibg=#af0000
-hi Todo gui=bold guifg=#000000 guibg=#8787af
+hi Error NONE guifg=#b2b2b2 ctermfg=249 guibg=#af0000 ctermbg=124
+hi Todo NONE gui=bold cterm=bold guifg=#000000 ctermfg=0 guibg=#8787af ctermbg=103
