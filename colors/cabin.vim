@@ -15,7 +15,7 @@ let g:colors_name = "cabin"
 
 " General VIM chrome.
 
-hi Normal NONE guifg=#8a8a8a ctermfg=245 guibg=#121212 ctermbg=233
+hi Normal NONE guifg=#8a8a8a ctermfg=245 guibg=#1c1c1c ctermbg=233
 hi Cursor NONE guifg=#000000 ctermfg=0 guibg=#5fff87 ctermbg=84
 hi MatchParen NONE gui=bold cterm=bold guifg=#5fff87 ctermfg=84
 hi StatusLineNC NONE guifg=#303030 ctermfg=236 guibg=#000000 ctermbg=0
